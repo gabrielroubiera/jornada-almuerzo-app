@@ -1,0 +1,8 @@
+<div class="card-body">
+  <h5 class="card-title">Ingredientes en la Bodega</h5>
+  <ul>
+    <li *ngFor="let ingrediente of ingredientesBodega">
+      {{ ingrediente.ingrediente }} - Cantidad: {{ ingrediente.cantidad }}
+    </li>
+  </ul>
+</div>
