@@ -1,6 +1,11 @@
 <div class="card-body">
   <h5 class="card-title">Ingredientes en la Bodega</h5>
-  <ul>
+  <div *ngIf="ingredientesBodega.length == 0">
+    <div class="alert alert-warning mt-4" role="alert">
+      No tienes productos en la bodega.
+    </div>
+  </div>
+  <ul *ngIf="ingredientesBodega.length" class="mt-4">
     <li *ngFor="let ingrediente of ingredientesBodega">
       {{ ingrediente.ingrediente }} - Cantidad: {{ ingrediente.cantidad }}
     </li>

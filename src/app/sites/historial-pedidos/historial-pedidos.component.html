@@ -1,0 +1,13 @@
+<div class="card-body">
+  <h5 class="card-title">Historial de compra de pedidos en la plaza.</h5>
+  <div *ngIf="historialPedidos.length == 0">
+    <div class="alert alert-success mt-4" role="alert">
+      Aun no has solicitado un plato
+    </div>
+  </div>
+  <ul *ngIf="historialPedidos.length" class="mt-4">
+    <li *ngFor="let pedido of historialPedidos">
+      Plato: {{ pedido.nombre }} - Fecha: {{pedido.created_at | date}}
+    </li>
+  </ul>
+</div>

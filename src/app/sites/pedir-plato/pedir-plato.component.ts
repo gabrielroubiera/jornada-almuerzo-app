@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-pedir-plato',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedirPlatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ApiService: ApiServiceService) { }
 
   ngOnInit(): void {
+
+  }
+
+  pedirPlatoProcess(){
+    this.ApiService.pedirPlato().subscribe(data => {
+      window.location.reload();
+    })
   }
 
 }
